@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>form validation</title>
+</head>
+<body>
+	<form onsubmit="return fun()" action="#">
+		<div id="u">
+			User Name : <input type="text"  id="user" name="" placeholder="username">
+		</div>
+		<p></p>
+		<div id="u">
+			Password : <input type="password" id="pass" name="" placeholder="password">
+		</div>
+		<p></p>
+		<button id="s">Submit</button>
+	</form>
+
+</body>
+<script type="text/javascript">
+	function fun(){
+		var username = document.getElementById('user');
+		var password = document.getElementById('pass');
+
+		//for blank 
+
+		if(username.value.trim()=="")
+		{
+			alert("please fill the username");
+			return false;							// after ok on alert if value is not filled then be on same page
+		}
+		else if(password.value=="")
+		{
+
+			alert("please fill the password");
+			return false;							// after ok on alert if value is not filled then be on same page
+		}
+		else if(password.value.length<5)
+		{
+			alert("password is too short");
+			return false;                      		// after ok on alert if value is not filled then be on same page
+		}
+		else{
+			return true;
+		}
+
+	}
+</script>
+</html>
